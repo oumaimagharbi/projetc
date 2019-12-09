@@ -1,0 +1,168 @@
+#ifdef HAVE_CONFIG_H
+#  include <config.h>
+#endif
+
+#include <gtk/gtk.h>
+
+#include "callbacks.h"
+#include "interface.h"
+#include "support.h"
+/*#include "who.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int verif(char nom[], char prenom[]){
+FILE*f;
+char Nom[20]; char Prenom[20];int Role;
+f=fopen("/home/coca/gladeProject/skytravel3/src/personne.txt","r");//ouvertur du fichier en mode lecture
+if(f !=NULL) {
+while(fscanf(f,"%s %s %d \n",Nom,Prenom,&Role)!=EOF){ //parcours du fichier;
+}
+fclose(f);
+if ((strcmp(nom,Nom)==0) && (strcmp(Prenom,prenom)==0)) return Role;
+} return 0;
+}
+
+
+void
+on_Quitter01_clicked                   (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_Rechercher2_clicked                 (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_Quitter1_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_Quitter2_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_loginbutton_clicked                 (GtkButton       *button,
+                                        gpointer         user_data)
+{
+//1 = agent
+//2 = client
+GtkWidget *loginwindow , *agent, *aller_allerretour_window;
+GtkWidget *entry10, *entry11, *WPlabel;
+char login[20]; char password [20];
+entry10=lookup_widget(button,"entry10");
+entry11=lookup_widget(button,"entry11");
+WPlabel=lookup_widget(button,"WPlabel");
+strcpy(login,gtk_entry_get_text(GTK_ENTRY(entry10)));
+strcpy(password,gtk_entry_get_text(GTK_ENTRY(entry11)));
+////////////////
+int x=verif(login,password);
+
+////////////////////
+if(x==1){
+who (login,password,x);
+agent=lookup_widget(button,"agent");
+loginwindow=lookup_widget(button,"loginwindow");
+gtk_widget_destroy(loginwindow);
+agent=create_agent();
+gtk_widget_show(agent);}
+if(x==2){
+who (login,password,x);
+aller_allerretour_window=lookup_widget(button,"aller_allerretour_window");
+loginwindow=lookup_widget(button,"loginwindow");
+gtk_widget_destroy(loginwindow);
+aller_allerretour_window=create_aller_allerretour_window();
+gtk_widget_show(aller_allerretour_window);}
+char tast[20];
+sprintf(tast,"%d",x);
+if(x==0){gtk_label_set_text(WPlabel,"wrong pass / login ");}
+}
+
+
+void
+on_allerbutton_clicked                 (GtkButton       *button,
+                                        gpointer         user_data)
+{
+GtkWidget *aller_allerretour_window , *agent, *client;
+client=lookup_widget(button,"client");
+aller_allerretour_window=lookup_widget(button,"aller_allerretour_window");
+gtk_widget_destroy(aller_allerretour_window);
+client=create_client();
+gtk_widget_show(client);
+}
+
+
+void
+on_allerretourbutton_clicked           (GtkButton       *button,
+                                        gpointer         user_data)
+{
+GtkWidget *aller_allerretour_window , *agent, *client;
+client=lookup_widget(button,"allerretourclient");
+aller_allerretour_window=lookup_widget(button,"aller_allerretour_window");
+gtk_widget_destroy(aller_allerretour_window);
+client=create_allerretourclient();
+gtk_widget_show(client);
+}
+
+
+void
+on_quitter3button_clicked              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+GtkWidget *aller_allerretour_window , *agent, *client;
+client=lookup_widget(button,"loginwindow");
+aller_allerretour_window=lookup_widget(button,"aller_allerretour_window");
+gtk_widget_destroy(aller_allerretour_window);
+client=create_loginwindow();
+gtk_widget_show(client);
+}
+
+
+void
+on_button11_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+GtkWidget *aller_allerretour_window , *agent, *client;
+client=lookup_widget(button,"allerretourclient");
+aller_allerretour_window=lookup_widget(button,"aller_allerretour_window");
+gtk_widget_destroy(client);
+aller_allerretour_window=create_aller_allerretour_window();
+gtk_widget_show(aller_allerretour_window);
+}
+
+
+void
+on_button12_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_Quitter02_clicked                   (GtkButton       *button,
+                                        gpointer         user_data)
+{
+GtkWidget *aller_allerretour_window , *agent, *client;
+client=lookup_widget(button,"client");
+aller_allerretour_window=lookup_widget(button,"aller_allerretour_window");
+gtk_widget_destroy(client);
+aller_allerretour_window=create_aller_allerretour_window();
+gtk_widget_show(aller_allerretour_window);
+}
+*/

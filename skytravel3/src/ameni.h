@@ -1,0 +1,1 @@
+void ameni (int id);
